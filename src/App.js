@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ImagesCard from "./components/ImagesCard";
+import ImagesSearch from "./components/ImageSearch";
 
 function App() {
   // app level stat
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <div className="container mx-auto">
+      <ImagesSearch />
       {isLoading ? (
         <h1 className="text-6xl text-center mx-auto mt-32">Loading.....</h1>
       ) : (
