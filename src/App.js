@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ImagesCard from './components/ImagesCard'
+import ImagesCard from "./components/ImagesCard";
 
 function App() {
   // app level stat
@@ -21,13 +21,16 @@ function App() {
 
   return (
     <div className="container mx-auto">
-      <div className="grid-cols-3 grid gap-4">
-        {images.map(image =>(
-          <ImagesCard key={image.id} image={image} />
-        ))}
-      </div>
+      {isLoading ? (
+        <h1 className="text-6xl text-center mx-auto mt-32">Loading.....</h1>
+      ) : (
+        <div className="grid-cols-3 grid gap-4">
+          {images.map((image) => (
+            <ImagesCard key={image.id} image={image} />
+          ))}
+        </div>
+      )}
     </div>
-
   );
 }
 
